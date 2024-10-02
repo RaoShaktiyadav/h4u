@@ -290,9 +290,26 @@ const Home= () => {
         </div>
       </div>
     </section>
-  
+
+
+    <section class="container-fluid spacing">
+<h5 class="heading5 text-center instagramIcon"><a href="https://www.instagram.com/looksunisexsalon/" target="_blank"><img src="https://www.lookssalon.in/public/images/instagram.png" alt="Instagram Icon"/></a><span class="text-uppercase">Follow us </span> @Hair4you</h5>
+<div class="instagramFrame"><iframe src="https://snapwidget.com/embed/470887" class="insFrame" allowtransparency="true" frameborder="0" scrolling="no" ></iframe>
+
+
+</div>
+</section>
+<section class="containe-fluid seoContent spacing">
+<div class="containe">
+<h4>Explore the Realm of Beauty with Hair4you Salon</h4>
+<p> Hair4you salon is a premium beauty salon for men and women who desire to look the best every day. Getting a makeover not only changes the appearance of a person but also brings back the lost confidence and Hair4you Salon would take pride in being a part of it. From beauty to grooming services, we provide a tremendous range of facilities that touches every dimension of beauty and hair treatments. Our repertoire of professional experts makes sure that all your beauty and hair questions are answered, and you leave the salon with a big smile on your face.  </p>
+<p>With over 30 employees engaged in transforming your look, we make sure that all the services provided at our salons meet the international standards. Through our advice and solutions from the expertise in this array, we aim at giving the best services through our state-of-art facilities. Our professional stylists and beauty experts are constantly updated with the latest trends and fashion advices that help them to work efficiently and deliver outstanding results!  </p>
+<p>Give us an opportunity to serve you once, we are sure you'll love to come back to us again and be our esteemed customer forever. Fill the form or call us to book an appointment now!  </p>
+</div>
+</section>
 
    </div> 
+  
   )
 }
 export default Home;

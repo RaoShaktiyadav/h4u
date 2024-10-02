@@ -136,13 +136,14 @@
 .animatedParent {
   background-image: url(./img/fBg.jpg);
   background-size: 100%;
-  width: 100%;
+  width: 98%;
   
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   padding: 5% 5%;
   max-width: 1200px;
+  margin: 1%;
   
 }
 
@@ -508,3 +509,137 @@
 .form-group {
   margin-top: 30px;
 }
+/* General Styles */
+.container-fluid {
+  padding: 0 15px;
+  max-width: 100%;
+}
+
+.spacing {
+  margin: 20px 0;
+}
+
+.heading5 {
+  font-size: 1.25rem;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.instagramIcon img {
+  width: 90%;
+  height: 30px;
+}
+
+.instagramFrame {
+  text-align: center;
+}
+
+.insFrame {
+  width: 100%;
+  height: 400px;
+  max-width: 1100px;
+  border: none;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+  .heading5 {
+    font-size: 1rem;
+  }
+  
+  .instagramIcon img {
+    width: 25px;
+    height: 25px;
+  }
+
+  .insFrame {
+    height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .heading5 {
+    font-size: 0.9rem;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .instagramIcon img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .insFrame {
+    height: 250px;
+  }
+}
+/* General Styles */
+.containe-fluid {
+  padding: 0% 12%;
+  max-width: 100%;
+  font-weight: 500;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  
+}
+
+.spacing {
+  margin: 30px 0;
+}
+
+.seoContent h4 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  
+}
+
+.seoContent p {
+ 
+  font-size: 1.0rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.containe {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 992px) {
+  .seoContent h1 {
+    font-size: 2rem;
+  }
+
+  .seoContent p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .seoContent h1 {
+    font-size: 1.75rem;
+    margin-bottom: 15px;
+  }
+
+  .seoContent p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .seoContent h1 {
+    font-size: 1.5rem;
+  }
+
+  .seoContent p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+}
+
