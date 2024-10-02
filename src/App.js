@@ -95,7 +95,7 @@ const App = () => {
           {/* Column 4 - Social Media */}
           <div className="footer-col">
             <h4>Follow Us</h4>
-            <img src='' />
+            <img src='' alt='logo'/>
             {/* <div className="social-icons">
               <a href="https://facebook.com" target="_blank" rel="noreferrer">
                 <i className="fab fa-facebook-f"></i>
