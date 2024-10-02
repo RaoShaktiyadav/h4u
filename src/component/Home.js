@@ -1,19 +1,25 @@
 import React from 'react'
+import ReCAPTCHA from "react-google-recaptcha";
 import { useState } from 'react';
 import slide1 from "./img/istk.jpg";
 import slide2 from "./img/slid.jpg";
 import slide3 from "./img/slid2.png";
 const Home= () => {
-
   const [formData, setFormData] = useState({
     name: "",
+    contact: "",
     email: "",
+    city: "",
+    location: "",
+    gender: "",
+    service: "",
     date: "",
     time: "",
-    service: "",
+    meridiem: "AM",
   });
 
   const [formErrors, setFormErrors] = useState({});
+  const [captchaValid, setCaptchaValid] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (e) => {
@@ -23,24 +29,31 @@ const Home= () => {
   const validate = () => {
     let errors = {};
     if (!formData.name) errors.name = "Name is required";
+    if (!formData.contact || formData.contact.length !== 10)
+      errors.contact = "Valid 10-digit contact number is required";
     if (!formData.email) errors.email = "Email is required";
-    if (!formData.date) errors.date = "Date is required";
-    if (!formData.time) errors.time = "Time is required";
-    if (!formData.service) errors.service = "Service is required";
-
-    setFormErrors(errors);
-    return Object.keys(errors).length === 0;
+    if (!formData.city) errors.city = "City is required";
+    if (!formData.location) errors.location = "Location is required";
+    if (!formData.gender) errors.gender = "Gender is required";
+    if (!formData.date) errors.date = "Preferred date is required";
+    if (!formData.time) errors.time = "Preferred time is required";
+    return errors;
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (validate()) {
-      // Process the form
+    const errors = validate();
+    if (Object.keys(errors).length === 0 && captchaValid) {
       setSubmitted(true);
-      console.log("Form submitted successfully", formData);
+      console.log("Form Submitted", formData);
+    } else {
+      setFormErrors(errors);
     }
   };
-  
+
+  const handleCaptchaChange = (value) => {
+    setCaptchaValid(!!value);
+  };
   return (
     <div id='mainhome'>
     <div id="carouselExampleIndicators" class="carousel slide">
@@ -91,82 +104,192 @@ const Home= () => {
 </div>
 </section>
 
-<div className="appointment-form">
-      <h2>Book an Appointment</h2>
+<section className="container-fluid hQuery">
+      <div className="animatedParent" data-appear-top-offset="-300">
+        <div className="container whiteBg animated bounceInDown spacing go">
+          <h5 className="heading5 text-center smText">
+            Let's not wait for the "Perfect Look"
+          </h5>
+          <p className="text-center">Book An Appointment Now!</p>
+          {submitted ? (
+            <div className="success-message">
+              <h3>Appointment Successfully Booked!</h3>
+              <p>Thank you, {formData.name}. We will contact you soon.</p>
+            </div>
+          ) : (
+            <form onSubmit={handleSubmit}>
+              <div className="row">
+                <div className="col-sm-6">
+                  <ul className="bookAppointmentform formField animated fadeInLeft go">
+                    <li>
+                      <i className="fa fa-user" aria-hidden="true"></i>
+                      <input
+                        type="text"
+                        name="name"
+                        placeholder="Name*"
+                        value={formData.name}
+                        onChange={handleChange}
+                        required
+                      />
+                      {formErrors.name && (
+                        <span className="error">{formErrors.name}</span>
+                      )}
+                    </li>
+                    <li>
+                      <i className="fa fa-phone" aria-hidden="true"></i>
+                      <input
+                        type="text"
+                        name="contact"
+                        placeholder="Contact*"
+                        value={formData.contact}
+                        onChange={handleChange}
+                        required
+                        maxLength={10}
+                      />
+                      {formErrors.contact && (
+                        <span className="error">{formErrors.contact}</span>
+                      )}
+                    </li>
+                    <li>
+                      <i className="fa fa-envelope" aria-hidden="true"></i>
+                      <input
+                        type="email"
+                        name="email"
+                        placeholder="Email Id"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                      />
+                      {formErrors.email && (
+                        <span className="error">{formErrors.email}</span>
+                      )}
+                    </li>
+                    <li>
+                      <i className="fa fa-map-marker" aria-hidden="true"></i>
+                      <select
+                        name="city"
+                        value={formData.city}
+                        onChange={handleChange}
+                        required
+                      >
+                        <option value="">City*</option>
+                        <option value="Agra">Agra</option>
+                        <option value="Ahmedabad">Ahmedabad</option>
+                        <option value="Aligarh">Aligarh</option>
+                        {/* Add more cities */}
+                      </select>
+                      {formErrors.city && (
+                        <span className="error">{formErrors.city}</span>
+                      )}
+                    </li>
+                    </ul>
+                    <ul className='phas2'>
+                    <li>
+                      <i className="fa fa-map-marker" aria-hidden="true"></i>
+                      <select
+                        name="location"
+                        value={formData.location}
+                        onChange={handleChange}
+                        required
+                      >
+                        <option value="">Location*</option>
+                        <option value="Downtown">Downtown</option>
+                        <option value="Uptown">Uptown</option>
+                      </select>
+                      {formErrors.location && (
+                        <span className="error">{formErrors.location}</span>
+                      )}
+                    </li>
+                  </ul>
+                </div>
 
-      {submitted ? (
-        <div className="success-message">
-          <h3>Appointment Successfully Booked!</h3>
-          <p>Thank you, {formData.name}. We will contact you shortly.</p>
+                <div className="col-sm-6 animated fadeInLeft go">
+                  <ul className="bookAppointmentform formField">
+                    <li>
+                      <i className="fa fa-male" aria-hidden="true"></i>
+                      <select
+                        name="gender"
+                        value={formData.gender}
+                        onChange={handleChange}
+                        required
+                      >
+                        <option value="">Gender*</option>
+                        <option value="Ladies">Ladies</option>
+                        <option value="Gents">Gents</option>
+                      </select>
+                      {formErrors.gender && (
+                        <span className="error">{formErrors.gender}</span>
+                      )}
+                    </li>
+                    <li>
+                      <i className="fa fa-scissors" aria-hidden="true"></i>
+                      <input
+                        type="text"
+                        name="service"
+                        placeholder="Service Type"
+                        value={formData.service}
+                        onChange={handleChange}
+                      />
+                    </li>
+                    <li>
+                      <i className="fa fa-calendar" aria-hidden="true"></i>
+                      <input
+                        type="date"
+                        name="date"
+                        value={formData.date}
+                        onChange={handleChange}
+                        required
+                      />
+                      {formErrors.date && (
+                        <span className="error">{formErrors.date}</span>
+                      )}
+                    </li>
+                    <li>
+                      <i className="fa fa-clock-o" aria-hidden="true"></i>
+                      <input
+                        type="time"
+                        name="time"
+                        value={formData.time}
+                        onChange={handleChange}
+                        required
+                      />
+                      <select
+                        name="meridiem"
+                        value={formData.meridiem}
+                        onChange={handleChange}
+                        style={{ marginLeft: "10px" }}
+                      >
+                        <option value="AM">AM</option>
+                        <option value="PM">PM</option>
+                      </select>
+                      {formErrors.time && (
+                        <span className="error">{formErrors.time}</span>
+                      )}
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div align="center" className="form-group mb-2 mt-3">
+                <ReCAPTCHA
+                  sitekey="your-recaptcha-site-key"
+                  onChange={handleCaptchaChange}
+                />
+                {!captchaValid && (
+                  <span className="error">Please complete the CAPTCHA</span>
+                )}
+              </div>
+
+              <div className="text-center">
+                <button type="submit" disabled={!captchaValid}>
+                  Book Appointment
+                </button>
+              </div>
+            </form>
+          )}
         </div>
-      ) : (
-        <form onSubmit={handleSubmit}>
-          <div>
-            <label>Name:</label>
-            <input
-              type="text"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-            />
-            {formErrors.name && <span className="error">{formErrors.name}</span>}
-          </div>
-
-          <div>
-            <label>Email:</label>
-            <input
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-            />
-            {formErrors.email && <span className="error">{formErrors.email}</span>}
-          </div>
-
-          <div>
-            <label>Date:</label>
-            <input
-              type="date"
-              name="date"
-              value={formData.date}
-              onChange={handleChange}
-            />
-            {formErrors.date && <span className="error">{formErrors.date}</span>}
-          </div>
-
-          <div>
-            <label>Time:</label>
-            <input
-              type="time"
-              name="time"
-              value={formData.time}
-              onChange={handleChange}
-            />
-            {formErrors.time && <span className="error">{formErrors.time}</span>}
-          </div>
-
-          <div>
-            <label>Service:</label>
-            <select
-              name="service"
-              value={formData.service}
-              onChange={handleChange}
-            >
-              <option value="">Select Service</option>
-              <option value="Haircut">Haircut</option>
-              <option value="Hair Coloring">Hair Coloring</option>
-              <option value="Manicure">Manicure</option>
-              <option value="Pedicure">Pedicure</option>
-            </select>
-            {formErrors.service && (
-              <span className="error">{formErrors.service}</span>
-            )}
-          </div>
-
-          <button type="submit">Submit</button>
-        </form>
-      )}
-    </div>
+      </div>
+    </section>
   
 
    </div> 

@@ -410,65 +410,101 @@
     flex: 1 1 calc(100% - 30px); /* Full width on smaller screens */
   }
 }
-.appointment-form {
-  width: 100%;
-  max-width: 500px;
-  margin: 0 auto;
+/* Basic Styles */
+.container-fluid.hQuery {
   padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
+}
+
+.whiteBg {
   background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
-.appointment-form h2 {
-  text-align: center;
-  margin-bottom: 20px;
+.formField {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.appointment-form form div {
+.formField li {
   margin-bottom: 15px;
 }
 
-.appointment-form label {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-.appointment-form input,
-.appointment-form select {
+.formField input,
+.formField select {
   width: 100%;
-  padding: 8px;
-  margin-bottom: 5px;
+  padding: 10px;
+  font-size: 14px;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
 
-.appointment-form button {
-  width: 100%;
-  padding: 10px;
-  background-color: #28a745;
-  color: white;
+.formField .error {
+  color: red;
+  font-size: 12px;
+}
+
+.phas2 {
+  margin-top: 30px;
+}
+
+/* Responsive Layout */
+
+/* For larger screens, ensure both parts are in parallel columns */
+@media (min-width: 768px) {
+  .row {
+    display: flex;
+  }
+  
+  .col-sm-6 {
+    flex: 1;
+    padding: 0 15px;
+  }
+
+  .phas2 {
+    margin-top: 0;
+  }
+}
+
+/* For mobile screens, make each section stack vertically */
+@media (max-width: 767px) {
+  .row {
+    display: block;
+  }
+
+  .col-sm-6 {
+    width: 100%;
+    padding: 0;
+    margin-bottom: 20px;
+  }
+
+  .formField li {
+    margin-bottom: 10px;
+  }
+  
+  .phas2 {
+    margin-top: 20px;
+  }
+}
+
+/* Styling the button and recaptcha to be responsive */
+.text-center button {
+  padding: 10px 20px;
+  font-size: 16px;
   border: none;
+  background-color: #5cb85c;
+  color: #fff;
   border-radius: 5px;
   cursor: pointer;
 }
 
-.appointment-form button:hover {
-  background-color: #218838;
+.text-center button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
 }
 
-.error {
-  color: red;
-  font-size: 0.9em;
+.form-group {
+  margin-top: 30px;
 }
-
-.success-message {
-  text-align: center;
-  color: green;
-}
-
-.success-message h3 {
-  font-size: 1.5em;
-}
- 
