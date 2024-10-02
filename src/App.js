@@ -1,4 +1,5 @@
 import './App.css';
+import './component/Home.css';
 import {BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import React, { useState } from 'react';
 
@@ -61,7 +62,61 @@ const App = () => {
 </Routes>
 </Router>
 
-
+<footer className="salon-footer">
+      <div className="footer-container">
+        <div className="footer-row">
+          {/* Column 1 - About */}
+          <div className="footer-col">
+            <h4>About Our Salon</h4>
+            <p>
+              Welcome to our luxury salon where we offer premium beauty services for hair, nails, and skin. Experience relaxation and elegance at our salon with professional stylists and high-quality products.
+            </p>
+          </div>
+          {/* Column 2 - Salon Services */}
+          <div className="footer-col">
+            <h4>Our Services</h4>
+            <ul>
+              <li><a href="/services/hair">Hair Styling</a></li>
+              <li><a href="/services/nails">Nail Care</a></li>
+              <li><a href="/services/skin">Skincare</a></li>
+              <li><a href="/services/makeup">Makeup</a></li>
+              <li><a href="/services/spa">Spa Treatments</a></li>
+            </ul>
+          </div>
+          {/* Column 3 - Contact Info */}
+          <div className="footer-col">
+            <h4>Contact Us</h4>
+            <ul>
+              <li>Email: info@salon.com</li>
+              <li>Phone: +123 456 7890</li>
+              <li>Address: 123 Beauty Lane, City, Country</li>
+            </ul>
+          </div>
+          {/* Column 4 - Social Media */}
+          <div className="footer-col">
+            <h4>Follow Us</h4>
+            <img src='' />
+            {/* <div className="social-icons">
+              <a href="https://facebook.com" target="_blank" rel="noreferrer">
+                <i className="fab fa-facebook-f"></i>
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noreferrer">
+                <i className="fab fa-twitter"></i>
+              </a>
+              <a href="https://instagram.com" target="_blank" rel="noreferrer">
+                <i className="fab fa-instagram"></i>
+              </a>
+              <a href="https://pinterest.com" target="_blank" rel="noreferrer">
+                <i className="fab fa-pinterest-p"></i>
+              </a>
+            </div> */}
+          </div>
+        </div>
+      </div>
+      <div className="footer-bottom">
+        <p>&copy; 2024 Hair4you. All Rights Reserved.</p>
+      </div>
+    </footer>
 </div>
 
   );
