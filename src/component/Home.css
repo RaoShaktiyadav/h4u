@@ -2,7 +2,7 @@
 /* General Carousel Styling */
 .carousel {
   width: 100%;
-  max-width: 1200px;
+  
   margin: 0 auto;
   position: relative;
 }
@@ -142,7 +142,7 @@
   justify-content: center;
   flex-wrap: wrap;
   padding: 5% 5%;
-  max-width: 1200px;
+  
   margin: 1%;
   
 }
