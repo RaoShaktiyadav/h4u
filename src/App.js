@@ -1,10 +1,12 @@
 import './App.css';
 import './component/Home.css';
+import './component/About.css';
+import './component/Contact.css';
 import {BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import React, { useState } from 'react';
 
 import Home from './component/Home.js';
-import About from './component/About';
+import About from './component/About.js';
 import Services from './component/Services';
 import Contact from './component/Contact';
 
@@ -73,7 +75,7 @@ const App = () => {
             </p>
           </div>
           {/* Column 2 - Salon Services */}
-          <div className="footer-col">
+          {/* <div className="footer-col">
             <h4>Our Services</h4>
             <ul>
               <li><a href="/services/hair">Hair Styling</a></li>
@@ -82,7 +84,7 @@ const App = () => {
               <li><a href="/services/makeup">Makeup</a></li>
               <li><a href="/services/spa">Spa Treatments</a></li>
             </ul>
-          </div>
+          </div> */}
           {/* Column 3 - Contact Info */}
           <div className="footer-col">
             <h4>Contact Us</h4>
