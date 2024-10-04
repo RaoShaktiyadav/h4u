@@ -1,0 +1,85 @@
+/* General styles for the services section */
+.services-listss {
+    background-color: #f9f9f9; /* Light background color */
+   
+}
+
+/* Container styling for rows */
+.containes{
+   margin: 6% auto;
+    width: 90%;
+}
+
+/* Row styling */
+.rows {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+/* Column styling */
+.col-lg-4s, .col-md-6 {
+    margin: auto;
+    padding: 8px; /* Space between columns */
+    width: 30%;
+    
+}
+
+/* Service item layout styling */
+.service-item-layout2s {
+    background-color: #e5e6e5; /* White background for each card */
+    border-radius: 5cap 5cap 0cap 5cap; /* Rounded corners */
+    height: 60vh;
+    margin-top: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    text-align: center; /* Center align text */
+    transition: transform 0.3s; /* Smooth transition for hover effect */
+}
+
+/* Service image styling */
+.service-images {
+    border-radius: 5cap 5cap 0 0; /* Round top corners of the image */
+    overflow: hidden; /* Hide overflow for rounded images */
+}
+
+.service-images img {
+    width: 100%; /* Full width for the image */
+    height: auto; /* Maintain aspect ratio */
+    transition: filter 0.5s ease; /* Smooth transition for filter */
+    filter: grayscale(100%); /* Start with black and white */
+}
+
+/* On hover, remove grayscale filter */
+.service-item-layout2s:hover .service-images img {
+    filter: grayscale(0%); /* Show full color on hover */
+}
+
+/* Service content styling */
+.service-contentss {
+    padding: 20px; /* Padding around text */
+}
+
+.service-contentss h3 {
+    font-size: 1.5em; /* Heading font size */
+    margin: 10px 0; /* Margin around heading */
+    color: #333; /* Dark color for the heading */
+}
+
+.service-contents p {
+    font-size: 1em; /* Regular font size for description */
+    color: #555; /* Darker text color */
+    padding: 5%;
+}
+
+/* Hover effect on service item layout */
+.service-item-layout2s:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .col-lg-4s {
+        width: 100%; /* Full width on mobile */
+    }
+}

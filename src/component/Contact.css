@@ -1,0 +1,260 @@
+/* General Footer Styling */
+
+.footer-contact-informationc {
+    padding: 7% 7%;
+  }
+  
+  .rowac {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .col-md-4c {
+    width: 33%;
+    padding: 0% 0% 0% 6%;
+  }
+  
+  .icon-boxc {
+    width: 150px;
+    height: 150px;
+    margin: auto;
+    padding: 10%;
+    background-color: black;
+    border-radius: 50% 50% 5% 50%;
+  }
+  
+  .contact-info-itemc {
+    width: 80%;
+    text-align: center;
+  }
+  
+  .icon-boxc img {
+    width: 80px;
+    height: auto;
+    margin-bottom: 15px;
+  }
+  
+  .contact-info-itemc h3 {
+    font-size: 28px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+  
+  .contact-info-itemc p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  
+  /* Media Queries */
+  
+  /* For devices with a max-width of 1200px */
+  @media (max-width: 1200px) {
+    .col-md-4c {
+      width: 30%;
+    }
+  
+    .contact-info-itemc h3 {
+      font-size: 24px;
+    }
+    
+    .icon-boxc {
+      width: 120px;
+      height: 120px;
+    }
+    
+    .icon-boxc img {
+      width: 70px;
+    }
+  }
+  
+  /* For devices with a max-width of 992px */
+  @media (max-width: 992px) {
+    .col-md-4c {
+      width: 45%;
+      padding: 0 2%;
+    }
+  
+    .contact-info-itemc h3 {
+      font-size: 22px;
+    }
+    
+    .icon-boxc {
+      width: 110px;
+      height: 110px;
+    }
+    
+    .icon-boxc img {
+      width: 65px;
+    }
+  }
+  
+  /* For devices with a max-width of 768px */
+  @media (max-width: 768px) {
+    .rowac {
+      flex-direction: column;
+    }
+  
+    .col-md-4c {
+      width: 100%;
+      padding: 5% 0;
+    }
+  
+    .icon-boxc {
+      width: 100px;
+      height: 100px;
+    }
+  
+    .icon-boxc img {
+      width: 60px;
+    }
+  
+    .contact-info-itemc h3 {
+      font-size: 20px;
+    }
+  
+    .contact-info-itemc p {
+      font-size: 13px;
+    }
+  }
+  
+  /* For devices with a max-width of 576px */
+  @media (max-width: 576px) {
+    .icon-boxc {
+        
+      width: 90px;
+      height: 90px;
+    }
+  
+    .icon-boxc img {
+        
+      width: 50px;
+    }
+  
+    .contact-info-itemc h3 {
+      font-size: 18px;
+    }
+  
+    .contact-info-itemc p {
+      font-size: 12px;
+    }
+  }
+  
+  /* General section styling */
+.get-in-touch {
+    padding: 50px 0;
+    background-color: #ffffff;
+  }
+  
+  /* Section title */
+  .section-title h3 {
+    
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .section-title h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+    margin-bottom: 40px;
+  }
+  .col-lg-8{
+    
+    margin-right:40% ;
+  }
+  /* Form styles */
+  .contact-form {
+    
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+     }
+  
+  .contact-form .form-control {
+    background: #e1e1e1;
+    border: 1px solid #ffffff;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  .contact-form .form-control:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  .contact-form .btn-default {
+    background-color: transparent;
+    border: 2px solid #333;
+    color: #333;
+    padding: 10px 30px;
+    font-size: 1rem;
+    border-radius: 50px;
+    transition: 0.3s ease-in-out;
+  }
+  
+  .contact-form .btn-default:hover {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .section-title h2,
+    .section-title h3 {
+      font-size: 1.8rem;
+    }
+  
+    .contact-form {
+      padding: 20px;
+    }
+  
+    .btn-default {
+      width: 100%;
+    }
+  }
+  
+/* Main container for the map, ensuring responsiveness */
+.location-map-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    max-width: 100%;
+    margin: auto;
+  }
+  
+  /* Style for the iframe (Google Map) */
+  .location-map-container iframe {
+    width: 100%;
+    max-width: 100%; /* Ensures map doesn't overflow */
+    height: 450px;
+    border: none;
+    filter: grayscale(100%); /* Apply black and white effect */
+    transition: filter 0.4s ease-in-out; /* Smooth transition effect */
+  }
+  
+  /* On hover, transition from black-and-white to colored map */
+  .location-map-container iframe:hover {
+    filter: grayscale(0%);
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .location-map-container iframe {
+      height: 300px; /* Adjust height for smaller screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .location-map-container iframe {
+      height: 250px; /* Further adjust height for mobile screens */
+    }
+  }

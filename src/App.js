@@ -2,6 +2,7 @@ import './App.css';
 import './component/Home.css';
 import './component/About.css';
 import './component/Contact.css';
+import './component/Services.css';
 import {BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import React, { useState } from 'react';
 import f1 from './component/img/loc.png'

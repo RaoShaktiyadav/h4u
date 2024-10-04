@@ -1,78 +1,186 @@
 import React from 'react'
-import {useState, useEffect } from 'react';
-import ai1 from "./img/about-img-1.webp";
-import ai2 from "./img/about-img-2.webp";
+import f1 from "./img/icon-address.svg"
+import f2 from "./img/icon-phone.svg"
+import f3 from "./img/icon-email.svg"
 
 export default function Contact() {
-  const [yearCount, setYearCount] = useState(0);
-
-  // Simulate a counter for the "Since" year
-  useEffect(() => {
-      let count = 0;
-      const interval = setInterval(() => {
-          if (count < 10) {
-              setYearCount((prev) => prev + 1);
-              count++;
-          }
-      }, 100);
-      return () => clearInterval(interval); // Cleanup the interval
-  }, []);
-
   return (
     <div>
-      <div className="about-us-section1">
-            <div className="container1">
-                <div className="row0 ">
-                    <div className="col-lg-61">
-                        <div className="about-image1">
-                            <div className="row1">
-                                <div className="col-71">
-                                    <div className="about-img1 right-shape">
-                                        <figure className="reveal hover-anime">
-                                            <img  className='ai3' src={ai1} alt="About 1" />
-                                        </figure>
-                                    </div><div className="about-year-image">
-                                        
-                                        
-                                    <div className="about-year">
-                                            <p>Since<h4 className="counter">{yearCount}</h4></p>
-                                            
-                                        </div>
-                                    <div className="about-img1  left-shape">
-                                        <figure className="reveal hover-anime">
-                                            <img className="aboim" src={ai2} alt="About 2" />
-                                        </figure>
-                                    </div>
-                                </div>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
+		<div class="footer-main">
+      <div class="page-header">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-md-8 order-md-1 order-2">
+					
+					<div class="page-header-box">
+						
+						<h1 class="text-anime">Contact</h1>
+                    <ol class="breadcrumb wow fadeInUp" data-wow-delay="0.25s" >
+							<li class="breadcrumb-item">Home </li>
+							<li class="breadcrumb-item active" aria-current="page">/Contact</li>
+						</ol>
+					</div>
+					</div>
+    
+				</div>
 
-                    {/* Text Section */}
-                    <div className="col-lg-61 col-md-8 col-sm-12">
-                        <div className="section-title1">
-                            <h6 className="wow fadeInUp">About Glimy</h6>
-                            <h2 className="text-anime">
-                                <span className="line">
-                                    <span className="word">Hair4you </span>
-                                    <span className="word">Salon </span>
-                                    <span className="word">Feel </span>
-                                    <span className="word">Unique</span>
-                                </span>
-                            </h2>
-                        </div>
+				<div class="col-md-4 order-md-2 order-1">
+					
+					<div class="page-header-icon-box wow fadeInUp" data-wow-delay="0.50s" >	
+						<div class="page-header-icon">
+							<img src="https://artiestsalonandacademy.com/images/icon-contact.svg" alt=""/>
+						</div>
+					</div>
+					</div>
+				</div>
+			</div>
 
-                        <div className="about-content wow fadeInUp" data-wow-delay="0.50s">
-                            <p>Artistist Salon and Academy is one of the best beauty and hair salons in Jaipur for men and women. We are proud to have fully trained hairdressers and makeup artists. At Artistest Salon and Academy in Jaipur, with a pure combination of perfection and passion for hygiene and beauty, we ensure attention to detail in coloring and haircuts. Our premium solutions ensure your comfort at all times.</p>
-                            
-                            <p>We use only proven methods and premium products that deliver the best results. Your city's exclusive unisex salon, trusted by top tools and experts to deliver breathtaking looks and absolute luxury.</p>
-                        </div>
-                    </div>
-                </div>
+
+			
+		
+		<div class="footer-contact-informationc">
+			<div class="containerc">
+				<div class=" rowac">
+					<div class="col-md-4c  colmdc">
+						
+						<div class="contact-info-itemc wow fadeInUp" >
+							<div class="icon-boxc">
+								<img src={f1} alt=""/>
+							</div>
+
+							<h3>Our Location</h3>
+							<p>Bagadiya Bhawan 
+                J-26 subhash marg, opp. papya juice, market road
+                 C Scheme,Jaipur, Rajasthan 302001</p>
+						</div>
+						
+					</div>
+
+					<div class="col-md-4c">
+						
+						<div class="contact-info-itemc wow fadeInUp" data-wow-delay="0.25s" >
+							<div class="icon-boxc">
+								<img src={f2} alt=""/>
+							</div>
+
+							<h3>Phone</h3>
+							<p>Phone:+91  99298 49600 
+								
+                
+						</p></div>
+						
+					</div>
+
+					<div class="col-md-4c">
+						
+						<div class="contact-info-itemc wow fadeInUp" data-wow-delay="0.5s" >
+							<div class="icon-boxc">
+								<img src={f3} alt=""/>
+							</div>
+
+							<h3>E-mail</h3>
+							<p>Email: info@domain.com</p>
+						</div>
+					
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+		<div className="get-in-touch">
+      <div className="container">
+        <div className="row">
+          <div className="col-md-12">
+            <div className="section-title">
+              <h3>Contact Form</h3>
+              <h2 className="text-anime">Get In Touch With Us</h2>
             </div>
+          </div>
         </div>
+
+        <div className="row">
+          <div className="col-lg-8 offset-lg-2">
+            <div className="contact-form">
+              <form id="contactForm" action="#" method="POST" noValidate>
+                <div className="row">
+                  <div className="form-group col-md-5 mb-4">
+                    <input
+                      type="text"
+                      name="name"
+                      className="form-control"
+                      id="name"
+                      placeholder="Name"
+                      required
+                    />
+                  </div>
+
+                  <div className="form-group col-md-5 mb-4">
+                    <input
+                      type="email"
+                      name="email"
+                      className="form-control"
+                      id="email"
+                      placeholder="Email"
+                      required
+                    />
+                  </div>
+
+                  <div className="form-group col-md-5 mb-4">
+                    <input
+                      type="text"
+                      name="phone"
+                      className="form-control"
+                      id="phone"
+                      placeholder="Phone"
+                      required
+                    />
+                  </div>
+
+                  <div className="form-group col-md-5 mb-4">
+                    <input
+                      type="text"
+                      name="subject"
+                      className="form-control"
+                      id="subject"
+                      placeholder="Subject"
+                      required
+                    />
+                  </div>
+
+                  <div className="form-group col-md-11 mb-4">
+                    <textarea
+                      name="msg"
+                      className="form-control"
+                      id="msg"
+                      rows="4"
+                      placeholder="Write a Message"
+                      required
+                    ></textarea>
+                  </div>
+
+                  <div className="col-md-12 text-center">
+                    <button type="submit" className="btn-default">
+                      Submit Now
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+	<div className="location-map-container">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3527.087992962106!2d76.54748757522269!3d27.8685672183629!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3972af292a46d5ef%3A0x54cfa516467e05f3!2sHair%204%20u!5e0!3m2!1sen!2sin!4v1728057744145!5m2!1sen!2sin"
+        allowFullScreen=""
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+        title="Google Map Location"
+      ></iframe>
+    </div>
     </div>
   )
 }
