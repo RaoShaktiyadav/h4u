@@ -130,10 +130,10 @@ const App = () => {
 						
 						<div class="footer-social">
 							<ul>
-								<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-								<li><a href="#"><i class="fab fa-instagram"></i></a></li>
-								<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-								<li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+								<li><i class="fab fa-facebook-f"></i></li>
+								<li><i class="fab fa-instagram"></i></li>
+								<li><i class="fab fa-twitter"></i></li>
+								<li><i class="fab fa-linkedin-in"></i></li>
 							</ul>
 						</div>
 						
