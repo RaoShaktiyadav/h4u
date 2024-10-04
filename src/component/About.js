@@ -1,7 +1,44 @@
 import React from 'react'
+
+
 import {useState, useEffect } from 'react';
+import year from './img/ratem.png';
+import ye2 from './img/countm.png';
+import ye3 from './img/mann.png';
 import ai1 from "./img/about-img-1.webp";
 import ai2 from "./img/about-img-2.webp";
+
+
+
+
+const testimonials = [
+  {
+    name: 'Kanika Bhati',
+    image: 'https://artiestsalonandacademy.com/images/testimonial-4.jpg',
+    rating: 5,
+    review: `Artiest salon is my new favourite. It’s my go to place and amazing for all your salon needs. The entire staff is so warm, professional and highly skilled. A special mention for Manish who did my haircut and his skills were unmatched. I highly recommend Manish for anyone who wants any solution for all hair problems. Looking forward to visiting again.`
+  },
+  {
+    name: 'Mahesh Sharma',
+    image: 'https://artiestsalonandacademy.com/images/testimonial-3.jpg',
+    rating: 5,
+    review: `This salon is very luxurious. The stylists are very down-to-earth and maintain cleanliness. If you're looking for services for your hair, skin, nails, or makeup, I would recommend this salon as the best.`
+  },
+  {
+    name: 'Neha Bishnoi',
+    image: 'https://artiestsalonandacademy.com/images/testimonial-4.jpg',
+    rating: 5,
+    review: `Artiest salon is my new favourite. It’s my go to place and amazing for all your salon needs. The entire staff is so warm, professional and highly skilled. A special mention for Manish who did my haircut and his skills were unmatched. I highly recommend Manish for anyone who wants any solution for all hair problems. Looking forward to visiting again.`
+  },
+  {
+    name: 'Andy Sharma',
+    image: 'https://artiestsalonandacademy.com/images/testimonial-3.jpg',
+    rating: 5,
+    review: `This salon is very luxurious. The stylists are very down-to-earth and maintain cleanliness. If you're looking for services for your hair, skin, nails, or makeup, I would recommend this salon as the best.`
+  },
+  // Add more testimonials as needed
+];
+
 
 
 export default function About() {
@@ -18,6 +55,19 @@ export default function About() {
       }, 100);
       return () => clearInterval(interval); // Cleanup the interval
   }, []);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const handlePrevClick = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1
+    );
+  };
+
+  const handleNextClick = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
+    );
+  };
 
   return (
     <div mainabout>
@@ -102,6 +152,108 @@ export default function About() {
                 </div>
             </div>
         </div>
+
+
+
+        <div class="fun-facts">
+		<div class="container">
+			<div class="rowab ">
+				<div class="col-lg-5">
+					
+					<div class="section-title">
+						<h3 class="wow fadeInUp" >Company Overview</h3>
+						
+					<h2 class="text-anime"><div class="line" ><div class="word" >
+                        <div class="char" >Facts &amp; figure</div>
+                       </div></div></h2></div>
+					
+				</div>
+
+				<div class="col-lg-7">
+					<div class="facts-counter">
+						<div class="row5">
+							<div class="col-md-4">
+								
+								<div class="facts-item wow fadeInUp" data-wow-delay="0.5s">
+									<div class="icon-box">
+										<img src={year} alt="img"/>
+									</div>
+									
+									<h3><span class="counter">0</span>+</h3>
+									<p>Years of Experience.</p>
+								</div>
+								
+							</div>
+
+							<div class="col-md-4">
+								
+								<div class="facts-item wow fadeInUp" data-wow-delay="0.75s"  >
+									<div class="icon-box">
+										<img src={ye2} alt="img"/>
+									</div>
+									
+									<h3><span class="counter">700</span>+</h3>
+									<p>Company Clients</p>
+								</div>
+							
+							</div>
+
+							<div class="col-md-4">
+								
+								<div class="facts-item wow fadeInUp" data-wow-delay="1.0s" >
+									<div class="icon-box">
+										<img src={ye3} alt=""/>
+									</div>
+									
+									<h3><span class="counter">0</span>+</h3>
+									<p>Staff Members</p>
+								</div>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div className="testimonials">
+      <div className="container">
+        <div className="section-title">
+          <h3>Client Testimonials</h3>
+          <h2>What Our Clients Say</h2>
+        </div>
+
+        <div className="slider">
+          <div className="testimonial-slide">
+            <div className="testimonial-header">
+              <div className="author-img">
+                <img src={testimonials[currentIndex].image} alt={testimonials[currentIndex].name} />
+              </div>
+              <div className="author-info">
+                <h3>{testimonials[currentIndex].name}</h3>
+                <div className="rating-star">
+                  {'★'.repeat(testimonials[currentIndex].rating)}
+                </div>
+              </div>
+            </div>
+            <div className="testimonial-content">
+              <p>{testimonials[currentIndex].review}</p>
+            </div>
+          </div>
+
+          <div className="slider-nav">
+            <button className="prev" onClick={handlePrevClick}>
+              &#10094; {/* Left Arrow */}
+            </button>
+            <button className="next" onClick={handleNextClick}>
+              &#10095; {/* Right Arrow */}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
     </div>
     
   )

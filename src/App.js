@@ -4,6 +4,9 @@ import './component/About.css';
 import './component/Contact.css';
 import {BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import React, { useState } from 'react';
+import f1 from './component/img/loc.png'
+import f2 from './component/img/cont.png'
+import f3 from './component/img/timi.png'
 
 import Home from './component/Home.js';
 import About from './component/About.js';
@@ -64,61 +67,101 @@ const App = () => {
 </Routes>
 </Router>
 
-<footer className="salon-footer">
-      <div className="footer-container">
-        <div className="footer-row">
-          {/* Column 1 - About */}
-          <div className="footer-col">
-            <h4>About Our Salon</h4>
-            <p>
-              Welcome to our luxury salon where we offer premium beauty services for hair, nails, and skin. Experience relaxation and elegance at our salon with professional stylists and high-quality products.
-            </p>
-          </div>
-          {/* Column 2 - Salon Services */}
-          {/* <div className="footer-col">
-            <h4>Our Services</h4>
-            <ul>
-              <li><a href="/services/hair">Hair Styling</a></li>
-              <li><a href="/services/nails">Nail Care</a></li>
-              <li><a href="/services/skin">Skincare</a></li>
-              <li><a href="/services/makeup">Makeup</a></li>
-              <li><a href="/services/spa">Spa Treatments</a></li>
-            </ul>
-          </div> */}
-          {/* Column 3 - Contact Info */}
-          <div className="footer-col">
-            <h4>Contact Us</h4>
-            <ul>
-              <li>Email: info@salon.com</li>
-              <li>Phone: +123 456 7890</li>
-              <li>Address: 123 Beauty Lane, City, Country</li>
-            </ul>
-          </div>
-          {/* Column 4 - Social Media */}
-          <div className="footer-col">
-            <h4>Follow Us</h4>
-            <img src='' alt='logo'/>
-            {/* <div className="social-icons">
-              <a href="https://facebook.com" target="_blank" rel="noreferrer">
-                <i className="fab fa-facebook-f"></i>
-              </a>
-              <a href="https://twitter.com" target="_blank" rel="noreferrer">
-                <i className="fab fa-twitter"></i>
-              </a>
-              <a href="https://instagram.com" target="_blank" rel="noreferrer">
-                <i className="fab fa-instagram"></i>
-              </a>
-              <a href="https://pinterest.com" target="_blank" rel="noreferrer">
-                <i className="fab fa-pinterest-p"></i>
-              </a>
-            </div> */}
-          </div>
-        </div>
-      </div>
-      <div className="footer-bottom">
-        <p>&copy; 2024 Hair4you. All Rights Reserved.</p>
-      </div>
-    </footer>
+<footer class="footer">
+		
+		<div class="footer-contact-information">
+			<div class="container">
+				<div class=" rowa">
+					<div class="col-md-4  colmd">
+						
+						<div class="contact-info-item wow fadeInUp" >
+							<div class="icon-box">
+								<img src={f1} alt=""/>
+							</div>
+
+							<h3>Our Location</h3>
+							<p>Bagadiya Bhawan 
+                J-26 subhash marg, opp. papya juice, market road
+                 C Scheme,Jaipur, Rajasthan 302001</p>
+						</div>
+						
+					</div>
+
+					<div class="col-md-4">
+						
+						<div class="contact-info-item wow fadeInUp" data-wow-delay="0.25s" >
+							<div class="icon-box">
+								<img src={f2} alt=""/>
+							</div>
+
+							<h3>Get in Touch</h3>
+							<p>Phone:+91  99298 49600 
+								
+                Email: info@domain.com
+						</p></div>
+						
+					</div>
+
+					<div class="col-md-4">
+						
+						<div class="contact-info-item wow fadeInUp" data-wow-delay="0.5s" >
+							<div class="icon-box">
+								<img src={f3} alt=""/>
+							</div>
+
+							<h3>Working Hours</h3>
+							<p>Mon-Std: 09:30 AM - 9:00 PM     
+                Sunday: 09:30 PM - 9:00 PM</p>
+						</div>
+					
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="footer-main">
+			<div class="container">
+				<div class="row align-items-center">
+					<div class="col-lg-5">
+						
+						<div class="footer-logo">
+							<img src="images/logo-Group-8.png" alt="logo"/>
+						</div>
+						
+						<div class="footer-social">
+							<ul>
+								<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+								<li><a href="#"><i class="fab fa-instagram"></i></a></li>
+								<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+								<li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+							</ul>
+						</div>
+						
+					</div>
+
+					<div class="col-lg-7">
+						
+						<div class="footer-menu">
+							<ul>
+								<li><a href="index.php">Home</a></li>
+								<li><a href="about.php">About Us</a></li>
+								<li><a href="services.php">Services</a></li>
+								<li><a href="contact.php">Contact Us</a></li>
+								
+							</ul>
+						</div>
+					
+
+						
+						<div class="copyright">
+							<p>©2024 Artist Salon Academy | All rights reserved. Design And Developed By <a href="https://magnifyinfotech.com/">Magnify infotech Pvt. Ltd.</a> &amp; Manage by <a href="https://magnifyinstitute.com/">Magnify Institute.</a> </p>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		</footer>
 </div>
 
   );
