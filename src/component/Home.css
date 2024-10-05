@@ -91,7 +91,10 @@
     width: 35px;
     height: 35px;
   }
-
+  .carousel-item img{
+    width: 100%;
+    height: 50vh;
+  }
   .carousel-control-prev-icon,
   .carousel-control-next-icon {
     width: 14px;
@@ -640,6 +643,44 @@
   .seoContent p {
     font-size: 0.9rem;
     line-height: 1.5;
+  }
+}
+/* Main container to hold the iframe and make it responsive */
+.instagram-frame-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  max-width: 100%;
+  margin: auto;
+}
+
+/* Style the iframe for responsiveness */
+.instagram-iframe {
+  width: 100%;
+  max-width: 600px; /* Max width of the iframe */
+  height: 450px;
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for design */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+/* Hover effect: Add a slight scale and shadow effect */
+.instagram-iframe:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Shadow intensifies on hover */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .instagram-iframe {
+    height: 350px; /* Adjust height for tablets and smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .instagram-iframe {
+    height: 300px; /* Further adjust height for mobile screens */
   }
 }
 

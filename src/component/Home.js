@@ -296,10 +296,16 @@ const Home= () => {
 <h5 class="heading5 text-center instagramIcon">
   <a href="https://www.instagram.com/looksunisexsalon/" rel="noreferrer">
   <img src="https://www.lookssalon.in/public/images/instagram.png" alt="Instagram Icon"/></a><span class="text-uppercase">Follow us </span> @Hair4you</h5>
-<div class="instagramFrame"><iframe src="https://snapwidget.com/embed/470887" class="insFrame" allowtransparency="true" title='ifam' frameborder="0" scrolling="no" ></iframe>
-
-
-</div>
+  <div className="instagram-frame-container">
+      <iframe 
+        src="https://snapwidget.com/embed/470887" 
+        className="instagram-iframe" 
+        allowTransparency="true" 
+        title="Instagram Feed" 
+        frameBorder="0" 
+        scrolling="no"
+      ></iframe>
+    </div>
 </section>
 <section class="containe-fluid seoContent spacing">
 <div class="containe">

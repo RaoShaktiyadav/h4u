@@ -3,7 +3,7 @@ import './component/Home.css';
 import './component/About.css';
 import './component/Contact.css';
 import './component/Services.css';
-import {BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import {BrowserRouter as Router, Route, Routes, NavLink } from 'react-router-dom';
 import React, { useState } from 'react';
 import f1 from './component/img/loc.png'
 import f2 from './component/img/cont.png'
@@ -16,45 +16,69 @@ import Contact from './component/Contact';
 
 
 const App = () => {
+  // State to manage whether the menu is open or closed
   const [isOpen, setIsOpen] = useState(false);
 
+  // Function to toggle the menu open/close
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
-
   return (
     <div className='App'>
       <Router>
       <nav className="navbar">
       <div className="navbar-container">
-        <Link to="/" className="logo" onClick={() => setIsOpen(false)}>
-          BrandName
-        </Link>
-        <div className={`menu-icon ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
-          <div className="bar"></div>
-          <div className="bar"></div>
-          <div className="bar"></div>
+        <NavLink to="/" className="navbar-logo">
+          YourLogo
+        </NavLink>
+
+        {/* Hamburger icon */}
+        <div className={`menu-icon ${isOpen ? 'active' : ''}`} onClick={toggleMenu}>
+          <i className={isOpen ? 'fas fa-times' : 'fas fa-bars'}></i>
         </div>
-        <ul className={`nav-menu ${isOpen ? 'active' : ''}`}>
+
+        {/* Menu links */}
+        <ul className={`navbar-menu ${isOpen ? 'active' : ''}`}>
           <li className="nav-item">
-            <Link to="/" className="nav-links" onClick={() => setIsOpen(false)}>
+            <NavLink 
+              exact 
+              to="/" 
+              className="nav-links" 
+              activeClassName="active-link"
+              onClick={toggleMenu}
+            >
               Home
-            </Link>
+            </NavLink>
           </li>
           <li className="nav-item">
-            <Link to="/about" className="nav-links" onClick={() => setIsOpen(false)}>
+            <NavLink 
+              to="/about" 
+              className="nav-links" 
+              activeClassName="active-link"
+              onClick={toggleMenu}
+            >
               About
-            </Link>
+            </NavLink>
           </li>
           <li className="nav-item">
-            <Link to="/services" className="nav-links" onClick={() => setIsOpen(false)}>
+            <NavLink 
+              to="/services" 
+              className="nav-links" 
+              activeClassName="active-link"
+              onClick={toggleMenu}
+            >
               Services
-            </Link>
+            </NavLink>
           </li>
           <li className="nav-item">
-            <Link to="/contact" className="nav-links" onClick={() => setIsOpen(false)}>
+            <NavLink 
+              to="/contact" 
+              className="nav-links" 
+              activeClassName="active-link"
+              onClick={toggleMenu}
+            >
               Contact
-            </Link>
+            </NavLink>
           </li>
         </ul>
       </div>
@@ -96,7 +120,7 @@ const App = () => {
 							</div>
 
 							<h3>Get in Touch</h3>
-							<p>Phone:+91  99298 49600 
+							<p>Phone:+91  7742414814 
 								
                 Email: info@domain.com
 						</p></div>
