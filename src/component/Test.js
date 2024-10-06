@@ -14,7 +14,7 @@ const Test= () => {
         location:'',
        
       });
-      const [formErrors, setFormErrors] = useState({});
+      
       const [submitted, setSubmitted] = useState(false);
     
       
