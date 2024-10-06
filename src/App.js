@@ -33,7 +33,7 @@ const App = () => {
       <nav className="navbar">
       <div className="navbar-container">
         
-          <img className="navbar-logo" src={logo} />
+          <img className="navbar-logo" src={logo}  alt='logo'/>
        
 
         {/* Hamburger icon */}

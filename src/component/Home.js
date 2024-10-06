@@ -1,11 +1,10 @@
 import React from 'react'
-import ReCAPTCHA from "react-google-recaptcha";
 import { useState } from 'react';
 import emailjs from 'emailjs-com';
 import slide1 from "./img/istk.jpg";
 import slide2 from "./img/slid.jpg";
 import slide3 from "./img/slid2.png";
-import insta from "./img/insta.png"
+
 const Home= () => {
   const [formData, setFormData] = useState({
     name: '',
