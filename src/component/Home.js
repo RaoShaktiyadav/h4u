@@ -18,7 +18,7 @@ const Home= () => {
    
   });
   
-  const [submitted, setSubmitted] = useState(false);
+  
 
   
   const handleChange = (e) => {
