@@ -17,17 +17,59 @@ const Home= () => {
     location:'',
    
   });
-  
-  
+   // State for form submission status
+   const [submitted, setSubmitted] = useState(false);
 
-  
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
+   // State for form validation errors
+   const [formErrors, setFormErrors] = useState({});
+ 
+   // Handle form field changes
+   const handleChange = (e) => {
+     setFormData({
+       ...formData,
+       [e.target.name]: e.target.value,
+     });
+   };
+ 
+   // Validate the form fields
+   const validateForm = () => {
+     const errors = {};
+     if (!formData.name) errors.name = "Name is required";
+     if (!formData.contact) errors.contact = "Contact is required";
+     if (formData.contact && formData.contact.length !== 10)
+       errors.contact = "Contact must be 10 digits";
+     if (!formData.email) errors.email = "Email is required";
+     if (!formData.location) errors.location = "Location is required";
+     if (!formData.gender) errors.gender = "Gender is required";
+     if (!formData.service) errors.service = "Service is required";
+     if (!formData.date) errors.date = "Date is required";
+     if (!formData.time) errors.time = "Time is required";
+ 
+     return errors;
+   };
+ 
+   // Handle form submission
+   const handleSubmit = (e) => {
+     e.preventDefault();
+     const { name, value } = e.target;
+     setFormData({
+       ...formData,
+       [name]: value,
+     });
+ 
+     const errors = validateForm();
+     if (Object.keys(errors).length > 0) {
+       setFormErrors(errors); // If there are errors, display them
+     } else {
+       // If no errors, process form submission
+       console.log("Form Data Submitted:", formData);
+ 
+       // Here, you can add email sending logic via emailjs or another service
+ 
+       setSubmitted(true); // Set the form as submitted
+     }
+   };
+ 
 
   // Sending email through EmailJS
   const sendEmail = (e) => {
