@@ -1,59 +1,89 @@
 import React from 'react'
 import ReCAPTCHA from "react-google-recaptcha";
 import { useState } from 'react';
+import emailjs from 'emailjs-com';
 import slide1 from "./img/istk.jpg";
 import slide2 from "./img/slid.jpg";
 import slide3 from "./img/slid2.png";
+import insta from "./img/insta.png"
 const Home= () => {
   const [formData, setFormData] = useState({
-    name: "",
-    contact: "",
-    email: "",
-    city: "",
-    location: "",
-    gender: "",
-    service: "",
-    date: "",
-    time: "",
-    meridiem: "AM",
+    name: '',
+    email: '',
+    gender:'',
+    service:'',
+    contact:'',
+    date: '',
+    time: '',
+    location:'',
+   
   });
-
   const [formErrors, setFormErrors] = useState({});
-  const [captchaValid, setCaptchaValid] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
+  
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
   };
 
-  const validate = () => {
-    let errors = {};
-    if (!formData.name) errors.name = "Name is required";
-    if (!formData.contact || formData.contact.length !== 10)
-      errors.contact = "Valid 10-digit contact number is required";
-    if (!formData.email) errors.email = "Email is required";
-    if (!formData.city) errors.city = "City is required";
-    if (!formData.location) errors.location = "Location is required";
-    if (!formData.gender) errors.gender = "Gender is required";
-    if (!formData.date) errors.date = "Preferred date is required";
-    if (!formData.time) errors.time = "Preferred time is required";
-    return errors;
-  };
-
-  const handleSubmit = (e) => {
+  // Sending email through EmailJS
+  const sendEmail = (e) => {
     e.preventDefault();
-    const errors = validate();
-    if (Object.keys(errors).length === 0 && captchaValid) {
-      setSubmitted(true);
-      console.log("Form Submitted", formData);
-    } else {
-      setFormErrors(errors);
-    }
+
+    const templateParams = {
+      from_name: formData.name,
+      to_name: 'Salon Owner',
+      message: `Appointment Details:\nName: ${formData.name}\nEmail: ${formData.email}\nDate: ${formData.date}\nTime: ${formData.time}\nGender: ${formData.gender} \nService: ${formData.service}\nContact: ${formData.contact}\nLocation: ${formData.location}`,
+      email: formData.email,
+    };
+
+    emailjs.send('service_e3hq8xc', 'template_vruvycc', templateParams, '9IsxkYY0ZFHQTDf5f')
+      .then((response) => {
+        console.log('SUCCESS!', response.status, response.text);
+        alert('Email sent successfully!');
+      })
+      .catch((err) => {
+        console.log('FAILED...', err);
+        alert('Failed to send email.');
+      });
   };
 
-  const handleCaptchaChange = (value) => {
-    setCaptchaValid(!!value);
+  // Function to send data via WhatsApp
+  const sendToWhatsApp = () => {
+    const whatsappMessage = `Appointment Details:%0AName: ${formData.name}%0AEmail: ${formData.email}%0ADate: ${formData.date}%0ATime: ${formData.time}%0AService: ${formData.service} %0ALocation: ${formData.location}%0AGender: ${formData.grnder} `;
+    window.open(`https://wa.me/917742414814?text=${whatsappMessage}`, '_blank'); // Replace with the WhatsApp number
   };
+
+  // Function to handle both WhatsApp and email when the button is clicked
+  const onAppointmentClick = (e) => {
+    e.preventDefault();
+    sendEmail(e);  // Send the email
+    sendToWhatsApp();  // Send WhatsApp message
+  };
+
+
+
+
+
+// instagram function
+const insta = () => {
+  window.open('https://www.instagram.com/deepanshu_ahir_10?igsh=NTc4MTIwNjQ2YQ==', '_blank');
+};
+
+
+
+
+
+
+
+
+
+
+
   return (
     <div id='mainhome'>
     <div id="carouselExampleIndicators" class="carousel slide">
@@ -103,7 +133,6 @@ const Home= () => {
 </ul>
 </div>
 </section>
-
 <section className="container-fluid hQuery">
       <div className="animatedParent" data-appear-top-offset="-300">
         <div className="container whiteBg animated bounceInDown spacing go">
@@ -117,97 +146,41 @@ const Home= () => {
               <p>Thank you, {formData.name}. We will contact you soon.</p>
             </div>
           ) : (
-            <form onSubmit={handleSubmit}>
-              <div className="row">
-                <div className="col-sm-6">
-                  <ul className="bookAppointmentform formField animated fadeInLeft go">
-                    <li>
-                      <i className="fa fa-user" aria-hidden="true"></i>
-                      <input
-                        type="text"
-                        name="name"
-                        placeholder="Name*"
-                        value={formData.name}
-                        onChange={handleChange}
-                        required
-                      />
-                      {formErrors.name && (
-                        <span className="error">{formErrors.name}</span>
-                      )}
-                    </li>
-                    <li>
-                      <i className="fa fa-phone" aria-hidden="true"></i>
-                      <input
-                        type="text"
-                        name="contact"
-                        placeholder="Contact*"
-                        value={formData.contact}
-                        onChange={handleChange}
-                        required
-                        maxLength={10}
-                      />
-                      {formErrors.contact && (
-                        <span className="error">{formErrors.contact}</span>
-                      )}
-                    </li>
-                    <li>
-                      <i className="fa fa-envelope" aria-hidden="true"></i>
-                      <input
-                        type="email"
-                        name="email"
-                        placeholder="Email Id"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                      />
-                      {formErrors.email && (
-                        <span className="error">{formErrors.email}</span>
-                      )}
-                    </li>
-                    <li>
-                      <i className="fa fa-map-marker" aria-hidden="true"></i>
-                      <select
-                        name="city"
-                        value={formData.city}
-                        onChange={handleChange}
-                        required
-                      >
-                        <option value="">City*</option>
-                        <option value="Agra">Agra</option>
-                        <option value="Ahmedabad">Ahmedabad</option>
-                        <option value="Aligarh">Aligarh</option>
-                        {/* Add more cities */}
-                      </select>
-                      {formErrors.city && (
-                        <span className="error">{formErrors.city}</span>
-                      )}
-                    </li>
-                    </ul>
-                    <ul className='phas2'>
-                    <li>
-                      <i className="fa fa-map-marker" aria-hidden="true"></i>
-                      <select
+      <form onSubmit={onAppointmentClick}>
+        <div className='form'>
+        <div className='ph1'>
+        <div className="form-group">
+          <label>Name</label>
+          <input type="text" name="name" placeholder='Name' value={formData.name} onChange={handleChange} required />
+        </div>
+        <div className="form-group">
+        <label>Contact</label>
+          <input type="text" name="contact" placeholder='Contact'  value={formData.phone} onChange={handleChange} required  maxLength={10} />
+        </div>
+        <div className="form-group">
+          <label>Email</label>
+          <input type="email" name="email"  placeholder='E-mail'  value={formData.email} onChange={handleChange} required />
+        </div>
+        <div className="form-group">
+        <label>Location</label>
+        
+          <select
                         name="location"
                         value={formData.location}
                         onChange={handleChange}
                         required
                       >
-                        <option value="">Location*</option>
-                        <option value="Downtown">Downtown</option>
-                        <option value="Uptown">Uptown</option>
+                        <option value="">location*</option>
+                        <option value="Khairthal">Khairthal</option>
+                        <option value="Mundawar">Mundawar</option>
                       </select>
-                      {formErrors.location && (
-                        <span className="error">{formErrors.location}</span>
-                      )}
-                    </li>
-                  </ul>
-                </div>
-
-                <div className="col-sm-6 animated fadeInLeft go">
-                  <ul className="bookAppointmentform formField">
-                    <li>
-                      <i className="fa fa-male" aria-hidden="true"></i>
-                      <select
+                     
+                      </div>
+                      </div>
+        <div className='ph2'>
+        <div className="form-group">
+          <label>Gender</label>
+          <select
                         name="gender"
                         value={formData.gender}
                         onChange={handleChange}
@@ -217,88 +190,49 @@ const Home= () => {
                         <option value="Ladies">Ladies</option>
                         <option value="Gents">Gents</option>
                       </select>
-                      {formErrors.gender && (
-                        <span className="error">{formErrors.gender}</span>
-                      )}
-                    </li>
-                    <li>
-                      <i className="fa fa-scissors" aria-hidden="true"></i>
-                      <input
-                        type="text"
+                     
+                      </div>
+        <div className="form-group">
+          <label>Service</label>
+          <select
                         name="service"
-                        placeholder="Service Type"
                         value={formData.service}
                         onChange={handleChange}
-                      />
-                    </li>
-                    <li>
-                      <i className="fa fa-calendar" aria-hidden="true"></i>
-                      <input
-                        type="date"
-                        name="date"
-                        value={formData.date}
-                        onChange={handleChange}
                         required
-                      />
-                      {formErrors.date && (
-                        <span className="error">{formErrors.date}</span>
-                      )}
-                    </li>
-                    <li>
-                      <i className="fa fa-clock-o" aria-hidden="true"></i>
-                      <input
-                        type="time"
-                        name="time"
-                        value={formData.time}
-                        onChange={handleChange}
-                        required
-                      />
-                      <select
-                        name="meridiem"
-                        value={formData.meridiem}
-                        onChange={handleChange}
-                        style={{ marginLeft: "10px" }}
                       >
-                        <option value="AM">AM</option>
-                        <option value="PM">PM</option>
+                        <option value="">Service*</option>
+                        <option value="Hair cut">Hair cut</option>
+                        <option value="Hair color">Hair color</option>
                       </select>
-                      {formErrors.time && (
-                        <span className="error">{formErrors.time}</span>
-                      )}
-                    </li>
-                  </ul>
-                </div>
-              </div>
-
-              <div align="center" className="form-group mb-2 mt-3">
-                <ReCAPTCHA
-                  sitekey="your-recaptcha-site-key"
-                  onChange={handleCaptchaChange}
-                />
-                {!captchaValid && (
-                  <span className="error">Please complete the CAPTCHA</span>
-                )}
-              </div>
-
-              <div className="text-center">
-                <button type="submit" disabled={!captchaValid}>
-                  Book Appointment
-                </button>
-              </div>
-            </form>
-          )}
+                      </div>
+                      <div className="form-group">
+          <label>Date</label>
+          <input type="date" name="date" value={formData.date} onChange={handleChange} required />
         </div>
-      </div>
+        <div className="form-group">
+
+          <label>Time</label>
+          <input type="time" name="time" value={formData.time} onChange={handleChange} required />
+        </div>
+        </div>
+        </div>
+        <button type="submit" className="btn-submit">Send Appointment</button>
+      </form>
+    
+          )}
+          </div>
+    </div>
     </section>
 
 
     <section class="container-fluid spacing">
-<h5 class="heading5 text-center instagramIcon">
-  <a href="https://www.instagram.com/looksunisexsalon/" rel="noreferrer">
-  <img src="https://www.lookssalon.in/public/images/instagram.png" alt="Instagram Icon"/></a><span class="text-uppercase">Follow us </span> @Hair4you</h5>
-  <div className="instagram-frame-container">
+<h5 class="heading5 text-center instagramIcon" onClick={insta}>
+  <a href="https://www.instagram.com/deepanshu_ahir_10?igsh=NTc4MTIwNjQ2YQ==" rel="noreferrer">
+  <img onClick={insta} src="https://www.lookssalon.in/public/images/instagram.png" alt="Instagram Icon"/></a><span onClick={insta} class="text-uppercase">Follow us </span> @Cut N Curl</h5>
+  <div onClick={insta} className="instagram-frame-container">
       <iframe 
-        src="https://snapwidget.com/embed/470887" 
+      onClick={insta}
+         
         className="instagram-iframe" 
         allowTransparency="true" 
         title="Instagram Feed" 
