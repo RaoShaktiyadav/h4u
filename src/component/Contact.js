@@ -7,6 +7,23 @@ import f3 from "./img/icon-email.svg"
 import Test from './Test.js'
 
 const Contact = () => {
+  const mail = () => {
+    const email = "shaktiyadav635@gmail.com";
+    const subject = "";
+    const body = "I wanted to reach out to you regarding Salon apointment or somthing else ...";
+    const cc = "cc@example.com";
+    const bcc = "bcc@example.com";
+    
+    window.location.href = `mailto:${email}?cc=${encodeURIComponent(cc)}&bcc=${encodeURIComponent(bcc)}&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  };
+  
+  const add= () =>{
+    window.location.href = 'https://maps.app.goo.gl/JDdX8CvtWPATkM9RA'; 
+  };
+  const dail = () => {
+    // This will open the dialer with the provided number
+    window.location.href = "tel:+917891291865"; 
+  };
   // State to manage form data
   const [formData, setFormData] = useState({
     name: "",
@@ -104,28 +121,27 @@ const Contact = () => {
 				<div class=" rowac">
 					<div class="col-md-4c  colmdc">
 						
-						<div class="contact-info-itemc wow fadeInUp" >
+						<div onClick={add} class="contact-info-itemc wow fadeInUp" >
 							<div class="icon-boxc">
 								<img src={f1} alt=""/>
 							</div>
 
 							<h3>Our Location</h3>
-							<p>Bagadiya Bhawan 
-                J-26 subhash marg, opp. papya juice, market road
-                 C Scheme,Jaipur, Rajasthan 302001</p>
+							<p>
+              40 Feet Rd, Anand Nagar, Khairthal, Rajasthan 301404</p>
 						</div>
 						
 					</div>
 
 					<div class="col-md-4c">
 						
-						<div class="contact-info-itemc wow fadeInUp" data-wow-delay="0.25s" >
+						<div onClick={dail} class="contact-info-itemc wow fadeInUp" data-wow-delay="0.25s" >
 							<div class="icon-boxc">
 								<img src={f2} alt=""/>
 							</div>
 
 							<h3>Phone</h3>
-							<p>Phone:+91  99298 49600 
+							<p>Phone:+917891291865 
 								
                 
 						</p></div>
@@ -239,7 +255,7 @@ const Contact = () => {
 
 	<div className="location-map-container">
       <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3527.087992962106!2d76.54748757522269!3d27.8685672183629!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3972af292a46d5ef%3A0x54cfa516467e05f3!2sHair%204%20u!5e0!3m2!1sen!2sin!4v1728057744145!5m2!1sen!2sin"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3529.2816626043946!2d76.63951887530422!3d27.801099776128893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3972bb89f9bafaf7%3A0x8ddd8c3983a5859a!2sCut%20N%20Curl%20Khairthal!5e0!3m2!1sen!2sin!4v1728298175301!5m2!1sen!2sin"
         allowFullScreen=""
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
@@ -251,3 +267,4 @@ const Contact = () => {
   )
 }
 export default Contact;
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3529.2816626043946!2d76.63951887530422!3d27.801099776128893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3972bb89f9bafaf7%3A0x8ddd8c3983a5859a!2sCut%20N%20Curl%20Khairthal!5e0!3m2!1sen!2sin!4v1728298175301!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
