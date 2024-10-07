@@ -5,7 +5,7 @@ import './component/Contact.css';
 import './component/Services.css';
 
 
-import {BrowserRouter as Router, Route, Routes, NavLink, useNavigate } from 'react-router-dom';
+import {BrowserRouter as Router, Route, Routes, NavLink,  } from 'react-router-dom';
 import React, { useState } from 'react';
 
 import f1 from './component/img/loc.png'
