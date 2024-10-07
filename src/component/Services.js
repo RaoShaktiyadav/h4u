@@ -5,6 +5,7 @@ import s3 from './img/service-3.webp'
 import s4 from './img/service-4.webp'
 import s5 from './img/service-5.webp'
 import s6 from './img/service-6.webp'
+import Test from './Test.js'
 
 export default function Services() {
   return (
@@ -171,7 +172,7 @@ export default function Services() {
 
 
 
-
+	<Test/>
     </div>
   )
 }

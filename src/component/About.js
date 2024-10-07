@@ -7,6 +7,7 @@ import ye2 from './img/countm.png';
 import ye3 from './img/mann.png';
 import ai1 from "./img/about-img-1.webp";
 import ai2 from "./img/about-img-2.webp";
+import Test from './Test.js'
 
 
 
@@ -254,6 +255,7 @@ export default function About() {
         </div>
       </div>
     </div>
+    <Test/>
     </div>
     
   )

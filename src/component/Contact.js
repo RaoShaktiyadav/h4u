@@ -4,6 +4,7 @@ import emailjs from 'emailjs-com';
 import f1 from "./img/icon-address.svg"
 import f2 from "./img/icon-phone.svg"
 import f3 from "./img/icon-email.svg"
+import Test from './Test.js'
 
 const Contact = () => {
   // State to manage form data
@@ -245,6 +246,7 @@ const Contact = () => {
         title="Google Map Location"
       ></iframe>
     </div>
+    <Test/>
     </div>
   )
 }

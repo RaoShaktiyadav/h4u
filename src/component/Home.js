@@ -4,6 +4,8 @@ import emailjs from 'emailjs-com';
 import slide1 from "./img/istk.jpg";
 import slide2 from "./img/slid.jpg";
 import slide3 from "./img/slid2.png";
+import logo from "./img/logo.png"
+import Test from './Test.js'
 
 const Home= () => {
   const [formData, setFormData] = useState({
@@ -65,7 +67,9 @@ const Home= () => {
   };
 
 
-
+  const ser= () =>{
+    window.location.href = '/services'; 
+  };
 
 
 // instagram function
@@ -115,7 +119,7 @@ const insta = () => {
 <div class="animatedParent">
 <ul class="row">
 <li class="col-lg-4 col-md-4 col-sm-12 animated fadeInLeft delay-2000 go"><img src="https://d3r0z4awu7ba6n.cloudfront.net/images/looks/homeBanner/1.jpg" alt="Looks Salon Gents Hair Style"/></li>
-<li class="col-lg-4 col-md-4 col-sm-12 animated fadeInRight delay-1200 go"><img src="https://d3r0z4awu7ba6n.cloudfront.net/images/looks/homeBanner/2.jpg" alt="looks in vague collection"/></li>
+<li class="col-lg-4 col-md-4 col-sm-12 animated fadeInRight delay-1200 go"><img onClick={ser} src={logo} alt="looks in vague collection"/></li>
 <li class="col-lg-4 col-md-4 col-sm-12 animated fadeInLeft delay-250 go"><img src="https://d3r0z4awu7ba6n.cloudfront.net/images/looks/homeBanner/6.jpg" alt="Looks Salon Ladies Hair Style"/></li>
 <li class="col-lg-4 col-md-4 col-sm-12 animated fadeInRight delay-500 go"><img src="https://d3r0z4awu7ba6n.cloudfront.net/images/looks/homeBanner/4.jpg" alt="Ladies Hair Style - Looks Salon"/></li>
 <li class="col-lg-4 col-md-4 col-sm-12 animated fadeInLeft delay-1500 go"><img src="https://d3r0z4awu7ba6n.cloudfront.net/images/looks/homeBanner/5.jpg" alt="Haircut with Beard Style - Looks Salon"/></li>
@@ -138,7 +142,7 @@ const insta = () => {
           <h5 className="heading5 text-center smText">
             Let's not wait for the "Perfect Look"
           </h5>
-          <p className="text-center">Book An Appointment Now!</p>
+          <h3 className="text-center">Book An Appointment Now!</h3>
           (
       <form onSubmit={onAppointmentClick}>
         <div className='form'>
@@ -237,13 +241,13 @@ const insta = () => {
 </section>
 <section class="containe-fluid seoContent spacing">
 <div class="containe">
-<h4>Explore the Realm of Beauty with Hair4you Salon</h4>
-<p> Hair4you salon is a premium beauty salon for men and women who desire to look the best every day. Getting a makeover not only changes the appearance of a person but also brings back the lost confidence and Hair4you Salon would take pride in being a part of it. From beauty to grooming services, we provide a tremendous range of facilities that touches every dimension of beauty and hair treatments. Our repertoire of professional experts makes sure that all your beauty and hair questions are answered, and you leave the salon with a big smile on your face.  </p>
+<h4>Explore the Realm of Beauty with Cut N Curl Salon</h4>
+<p> Cut N Curl salon is a premium beauty salon for men and women who desire to look the best every day. Getting a makeover not only changes the appearance of a person but also brings back the lost confidence and Cut N Curl Salon would take pride in being a part of it. From beauty to grooming services, we provide a tremendous range of facilities that touches every dimension of beauty and hair treatments. Our repertoire of professional experts makes sure that all your beauty and hair questions are answered, and you leave the salon with a big smile on your face.  </p>
 <p>With over 30 employees engaged in transforming your look, we make sure that all the services provided at our salons meet the international standards. Through our advice and solutions from the expertise in this array, we aim at giving the best services through our state-of-art facilities. Our professional stylists and beauty experts are constantly updated with the latest trends and fashion advices that help them to work efficiently and deliver outstanding results!  </p>
 <p>Give us an opportunity to serve you once, we are sure you'll love to come back to us again and be our esteemed customer forever. Fill the form or call us to book an appointment now!  </p>
 </div>
 </section>
-
+<Test/>
    </div> 
   
   )
