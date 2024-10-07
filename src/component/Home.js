@@ -42,7 +42,7 @@ const Home= () => {
       email: formData.email,
     };
 
-    emailjs.send('service_e3hq8xc', 'template_vruvycc', templateParams, '9IsxkYY0ZFHQTDf5f')
+    emailjs.send('service_yaawlzy', 'template_onqglwu', templateParams, 'sp5uyKOBStHIkeKM-')
       .then((response) => {
         console.log('SUCCESS!', response.status, response.text);
         alert('Email sent successfully!');

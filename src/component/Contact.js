@@ -11,8 +11,8 @@ const Contact = () => {
     const email = "cutncurl0@gmail.com";
     const subject = "";
     const body = "I wanted to reach out to you regarding Salon apointment or somthing else ...";
-    const cc = "cc@example.com";
-    const bcc = "bcc@example.com";
+    const cc = "";
+    const bcc = "";
     
     window.location.href = `mailto:${email}?cc=${encodeURIComponent(cc)}&bcc=${encodeURIComponent(bcc)}&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
@@ -58,10 +58,10 @@ const Contact = () => {
     // EmailJS send function
     emailjs
       .send(
-        "service_e3hq8xc", // Replace with your EmailJS service ID
-        "template_vruvycc", // Replace with your EmailJS template ID
+        "service_yaawlzy", // Replace with your EmailJS service ID
+        "template_onqglwu", // Replace with your EmailJS template ID
         templateParams, // This is the data being sent
-        "9IsxkYY0ZFHQTDf5f" // Replace with your EmailJS user ID
+        "sp5uyKOBStHIkeKM-" // Replace with your EmailJS user ID
       )
       .then(
         (result) => {
