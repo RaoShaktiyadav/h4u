@@ -1,9 +1,69 @@
 import React from 'react'
+import { useState } from 'react'
+import emailjs from 'emailjs-com';
 import f1 from "./img/icon-address.svg"
 import f2 from "./img/icon-phone.svg"
 import f3 from "./img/icon-email.svg"
 
-export default function Contact() {
+const Contact = () => {
+  // State to manage form data
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    subject: "",
+    msg: "",
+  });
+
+  // State to handle submission status
+  const [submitted, setSubmitted] = useState(false);
+
+  // Handle form field changes
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  // Handle form submission
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const templateParams= {
+      from_name: formData.name,
+      to_name: 'Salon Owner',
+      message: `Feesback Details:\nName: ${formData.name}\nEmail: ${formData.email} \nContact: ${formData.contact}\nSubject: ${formData.subject}\nMessage: ${formData.msg}`,
+      email: formData.email,
+    };
+
+    // EmailJS send function
+    emailjs
+      .send(
+        "service_e3hq8xc", // Replace with your EmailJS service ID
+        "template_vruvycc", // Replace with your EmailJS template ID
+        templateParams, // This is the data being sent
+        "9IsxkYY0ZFHQTDf5f" // Replace with your EmailJS user ID
+      )
+      .then(
+        (result) => {
+          console.log("Email successfully sent!");
+          setSubmitted(true);
+        },
+        (error) => {
+          console.log("Failed to send the email.", error);
+        }
+      );
+
+    // Clear the form after submission
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      subject: "",
+      msg: "",
+    });
+  };
   return (
     <div>
 		<div class="footer-main">
@@ -87,21 +147,16 @@ export default function Contact() {
 			</div>
 		</div>
 		</div>
-		<div className="get-in-touch">
-      <div className="container">
-        <div className="row">
-          <div className="col-md-12">
-            <div className="section-title">
-              <h3>Contact Form</h3>
-              <h2 className="text-anime">Get In Touch With Us</h2>
-            </div>
-          </div>
-        </div>
-
-        <div className="row">
-          <div className="col-lg-8 offset-lg-2">
-            <div className="contact-form">
-              <form id="contactForm" action="#" method="POST" noValidate>
+    <div className="container">
+      <div className="row">
+        <div className="col-lg-8 offset-lg-2">
+          <div className="contact-form">
+            {submitted ? (
+              <div className="alert alert-success">
+                Thank you! Your message has been sent.
+              </div>
+            ) : (
+              <form id="contactForm" onSubmit={handleSubmit} noValidate>
                 <div className="row">
                   <div className="form-group col-md-5 mb-4">
                     <input
@@ -110,6 +165,8 @@ export default function Contact() {
                       className="form-control"
                       id="name"
                       placeholder="Name"
+                      value={formData.name}
+                      onChange={handleChange}
                       required
                     />
                   </div>
@@ -121,6 +178,8 @@ export default function Contact() {
                       className="form-control"
                       id="email"
                       placeholder="Email"
+                      value={formData.email}
+                      onChange={handleChange}
                       required
                     />
                   </div>
@@ -132,6 +191,8 @@ export default function Contact() {
                       className="form-control"
                       id="phone"
                       placeholder="Phone"
+                      value={formData.phone}
+                      onChange={handleChange}
                       required
                     />
                   </div>
@@ -143,6 +204,8 @@ export default function Contact() {
                       className="form-control"
                       id="subject"
                       placeholder="Subject"
+                      value={formData.subject}
+                      onChange={handleChange}
                       required
                     />
                   </div>
@@ -154,6 +217,8 @@ export default function Contact() {
                       id="msg"
                       rows="4"
                       placeholder="Write a Message"
+                      value={formData.msg}
+                      onChange={handleChange}
                       required
                     ></textarea>
                   </div>
@@ -165,12 +230,11 @@ export default function Contact() {
                   </div>
                 </div>
               </form>
-            </div>
+            )}
           </div>
         </div>
       </div>
     </div>
-
 
 	<div className="location-map-container">
       <iframe
@@ -184,3 +248,4 @@ export default function Contact() {
     </div>
   )
 }
+export default Contact;

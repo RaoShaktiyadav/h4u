@@ -53,7 +53,7 @@ const Home= () => {
 
   // Function to send data via WhatsApp
   const sendToWhatsApp = () => {
-    const whatsappMessage = `Appointment Details:%0AName: ${formData.name}%0AEmail: ${formData.email}%0ADate: ${formData.date}%0ATime: ${formData.time}%0AService: ${formData.service} %0ALocation: ${formData.location}%0AGender: ${formData.grnder} `;
+    const whatsappMessage = `Appointment Details:%0AName: ${formData.name}%0AEmail: ${formData.email}%0ADate: ${formData.date}%0ATime: ${formData.time}%0AService: ${formData.service} %0ALocation: ${formData.location}%0AGender: ${formData.gender} `;
     window.open(`https://wa.me/917742414814?text=${whatsappMessage}`, '_blank'); // Replace with the WhatsApp number
   };
 

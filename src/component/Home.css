@@ -265,7 +265,164 @@
     flex: 1 1 100%;
   }
 }
+/* General Styles */
+.container-fluid.hQuery {
+  padding: 20px;
+  background-color: #f9f9f9;
+}
 
+.container.whiteBg {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.heading5 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.smText {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #333;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin: 10px 0;
+}
+
+.btn-submit {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+  display: block;
+  width: 100%;
+}
+
+.btn-submit:hover {
+  background-color: #45a049;
+}
+
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.ph1,
+.ph2 {
+  width: 48%;
+  padding: 10px;
+}
+
+.ph1 .form-group,
+.ph2 .form-group {
+  width: 100%;
+}
+
+/* Responsive Media Queries */
+
+/* For mobile devices (max-width: 767px) */
+@media (max-width: 767px) {
+  .container.whiteBg {
+      padding: 20px;
+  }
+
+  .heading5 {
+      font-size: 20px;
+  }
+
+  .smText {
+      font-size: 14px;
+  }
+
+  .form-group input,
+  .form-group select {
+      width: 100%;
+      margin: 10px 0;
+  }
+
+  .btn-submit {
+      width: 100%;
+  }
+
+  .ph1,
+  .ph2 {
+      width: 100%; /* Full width on mobile */
+      padding: 0;
+  }
+}
+
+/* For tablets (min-width: 768px and max-width: 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .container.whiteBg {
+      padding: 30px;
+  }
+
+  .heading5 {
+      font-size: 22px;
+  }
+
+  .smText {
+      font-size: 15px;
+  }
+
+  .ph1,
+  .ph2 {
+      width: 48%; /* Two-column layout on tablets */
+      padding: 10px;
+  }
+}
+
+/* For desktops (min-width: 992px) */
+@media (min-width: 992px) {
+  .container.whiteBg {
+      max-width: 900px;
+      margin: 0 auto;
+  }
+
+  .heading5 {
+      font-size: 24px;
+  }
+
+  .smText {
+      font-size: 16px;
+  }
+
+  .ph1,
+  .ph2 {
+      width: 48%; /* Two-column layout on desktops */
+      padding: 10px;
+  }
+}
 /* General Section Styling */
 .container-fluid.hServices {
   padding: 50px 15px;
@@ -492,165 +649,93 @@
     margin-top: 20px;
   }
 }
-/* General Styles */
-.container-fluid.hQuery {
-  padding: 20px;
-  background-color: #f9f9f9;
-}
 
-.container.whiteBg {
-  background-color: #fff;
-  padding: 40px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.heading5 {
-  font-size: 24px;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 15px;
-}
-
-.smText {
+/* Styling the button and recaptcha to be responsive */
+.text-center button {
+  padding: 10px 20px;
   font-size: 16px;
-  color: #666;
-  margin-bottom: 20px;
+  border: none;
+  background-color: #5cb85c;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.text-center button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
 }
 
 .form-group {
-  margin-bottom: 20px;
+  margin-top: 30px;
 }
 
-.form-group label {
-  display: block;
-  margin-bottom: 8px;
+/* General Styles */
+.containe-fluid {
+  padding: 0% 12%;
+  max-width: 100%;
+  font-weight: 500;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  
+}
+
+.spacing {
+  margin: 30px 0;
+}
+
+.seoContent h4 {
+  font-size: 1.5rem;
   font-weight: bold;
-  color: #333;
+  margin-bottom: 20px;
+  
 }
 
-.form-group input,
-.form-group select {
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  margin: 10px 0;
+.seoContent p {
+ 
+  font-size: 1.0rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  text-align: justify;
 }
 
-.btn-submit {
-  background-color: #4CAF50;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 16px;
-  margin-top: 20px;
-  display: block;
-  width: 100%;
-}
-
-.btn-submit:hover {
-  background-color: #45a049;
-}
-
-.form {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.ph1,
-.ph2 {
-  width: 48%;
-  padding: 10px;
-}
-
-.ph1 .form-group,
-.ph2 .form-group {
-  width: 100%;
+.containe {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
 }
 
 /* Responsive Media Queries */
-
-/* For mobile devices (max-width: 767px) */
-@media (max-width: 767px) {
-  .container.whiteBg {
-      padding: 20px;
+@media (max-width: 992px) {
+  .seoContent h1 {
+    font-size: 2rem;
   }
 
-  .heading5 {
-      font-size: 20px;
-  }
-
-  .smText {
-      font-size: 14px;
-  }
-
-  .form-group input,
-  .form-group select {
-      width: 100%;
-      margin: 10px 0;
-  }
-
-  .btn-submit {
-      width: 100%;
-  }
-
-  .ph1,
-  .ph2 {
-      width: 100%; /* Full width on mobile */
-      padding: 0;
+  .seoContent p {
+    font-size: 1rem;
   }
 }
 
-/* For tablets (min-width: 768px and max-width: 991px) */
-@media (min-width: 768px) and (max-width: 991px) {
-  .container.whiteBg {
-      padding: 30px;
+@media (max-width: 768px) {
+  .seoContent h1 {
+    font-size: 1.75rem;
+    margin-bottom: 15px;
   }
 
-  .heading5 {
-      font-size: 22px;
-  }
-
-  .smText {
-      font-size: 15px;
-  }
-
-  .ph1,
-  .ph2 {
-      width: 48%; /* Two-column layout on tablets */
-      padding: 10px;
+  .seoContent p {
+    font-size: 0.95rem;
   }
 }
 
-/* For desktops (min-width: 992px) */
-@media (min-width: 992px) {
-  .container.whiteBg {
-      max-width: 900px;
-      margin: 0 auto;
+@media (max-width: 576px) {
+  .seoContent h1 {
+    font-size: 1.5rem;
   }
 
-  .heading5 {
-      font-size: 24px;
-  }
-
-  .smText {
-      font-size: 16px;
-  }
-
-  .ph1,
-  .ph2 {
-      width: 48%; /* Two-column layout on desktops */
-      padding: 10px;
+  .seoContent p {
+    font-size: 0.9rem;
+    line-height: 1.5;
   }
 }
-
 /* Main container to hold the iframe and make it responsive */
 .instagram-frame-container {
   display: flex;
