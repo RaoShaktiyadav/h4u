@@ -150,7 +150,7 @@ const Contact = () => {
 
 					<div class="col-md-4c">
 						
-						<div class="contact-info-itemc wow fadeInUp" data-wow-delay="0.5s" >
+						<div onClick={mail} class="contact-info-itemc wow fadeInUp" data-wow-delay="0.5s" >
 							<div class="icon-boxc">
 								<img src={f3} alt=""/>
 							</div>
