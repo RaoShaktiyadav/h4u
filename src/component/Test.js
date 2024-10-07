@@ -13,13 +13,13 @@ const Test= () => {
   };
 
   const ab= () =>{
-    window.location = '/about'; 
+    navigate('/about');         
   };
   const se= () =>{
-    window.location.href = '/services'; 
+    navigate('/services');
   };
   const co= () =>{
-    window.location.href = '/contact'; 
+    navigate('/contact');
   }; 
    // instagram function
 const insta = () => {

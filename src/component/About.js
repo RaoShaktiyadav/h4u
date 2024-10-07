@@ -136,7 +136,7 @@ export default function About() {
                             <h6 className="wow fadeInUp">About Glimy</h6>
                             <h2 className="text-anime">
                                 <span className="line">
-                                    <span className="word">Hair4you </span>
+                                    <span className="word">Cut N Curl </span>
                                     <span className="word">Salon </span>
                                     <span className="word">Feel </span>
                                     <span className="word">Unique</span>
@@ -145,7 +145,7 @@ export default function About() {
                         </div>
 
                         <div className="about-content wow fadeInUp" data-wow-delay="0.50s">
-                            <p>Artistist Salon and Academy is one of the best beauty and hair salons in Jaipur for men and women. We are proud to have fully trained hairdressers and makeup artists. At Artistest Salon and Academy in Jaipur, with a pure combination of perfection and passion for hygiene and beauty, we ensure attention to detail in coloring and haircuts. Our premium solutions ensure your comfort at all times.</p>
+                            <p>Cut N Curl Salon is one of the best beauty and hair salons in Khairthal for men and women. We are proud to have fully trained hairdressers and makeup artists. At Cut N Curl Salon in Khairthal, with a pure combination of perfection and passion for hygiene and beauty, we ensure attention to detail in coloring and haircuts. Our premium solutions ensure your comfort at all times.</p>
                             
                             <p>We use only proven methods and premium products that deliver the best results. Your city's exclusive unisex salon, trusted by top tools and experts to deliver breathtaking looks and absolute luxury.</p>
                         </div>
