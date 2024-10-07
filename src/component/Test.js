@@ -62,7 +62,7 @@ const dail = () => {
 							<h3>Get in Touch</h3>
 							<p>Phone:+917891291865, +919057563199 
 								
-                <br/><span>Email: info@domain.com</span>
+                <br/><span>Email:cutncurl0@gmail.com</span>
 						</p></div>
 						
 					</div>

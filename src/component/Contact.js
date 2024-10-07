@@ -8,7 +8,7 @@ import Test from './Test.js'
 
 const Contact = () => {
   const mail = () => {
-    const email = "shaktiyadav635@gmail.com";
+    const email = "cutncurl0@gmail.com";
     const subject = "";
     const body = "I wanted to reach out to you regarding Salon apointment or somthing else ...";
     const cc = "cc@example.com";
@@ -156,7 +156,7 @@ const Contact = () => {
 							</div>
 
 							<h3>E-mail</h3>
-							<p>Email: info@domain.com</p>
+							<p>Email:cutncurl0@gmail.com</p>
 						</div>
 					
 					</div>
