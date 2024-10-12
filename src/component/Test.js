@@ -75,8 +75,8 @@ const dail = () => {
 							</div>
 
 							<h3>Working Hours</h3>
-							<p>Mon-Sat: 09:30 AM - 9:00 PM     
-                <br/>Sunday: 07:30 AM - 9:00 PM</p>
+							<p>Mon-Sun: 08:30 AM - 9:45 PM     
+                <br/>Tuesday: 10:30 AM - 5:00 PM</p>
 						</div>
 					
 					</div>
